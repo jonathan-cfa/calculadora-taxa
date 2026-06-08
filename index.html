@@ -23,9 +23,10 @@
                 <input type="radio" name="tipo" id="ireceber" checked>
                 <label for="ireceber">RECEBER</label> <br>
                 <label for="ivalor">Quanto você quer Receber?</label> <br>
-                <input type="number" name="valor" id="ivalor" autocomplete="off">            
+                <input type="number" name="valor" id="ivalor" autocomplete="off"> <br>  
+                <input type="button" value="CALCULAR" onclick="calcular()">      
             </form>
-            <p>Valor a receber/pagar</p>
+            <p id="res">preencha os campos para calcular</p>
         </section>
         
         <section class="simulacao">
@@ -60,5 +61,7 @@
             <p>&copy; Desenvolvido por <a href="https://github.com/jonathan-cfa" target="_blank" rel="follow">Jonathan C.</a></p>
         </footer>
     </main>
+
+    <script src="script.js"></script>
 </body>
 </html>
