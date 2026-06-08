@@ -15,7 +15,6 @@ body, html{
     background-color: var(--corPrincipa);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.5em;
-    height: 100%;
 }
 
 header{
@@ -53,6 +52,11 @@ section{
     flex: 1;
     align-content: center;
 }
+section p {
+    margin-top: 15px;
+    font-weight: bolder;
+    font-size: 1.7em;
+}
 section label{
     font-weight: bold;
     font-size: 1.3em;
@@ -89,4 +93,28 @@ footer a {
 
 a:hover{
     color: var(--corPrincipa);
+}
+
+@media screen and (min-width:720px){
+    main{
+        display: grid;
+        grid-template-columns: 10px 1fr 10px;
+        grid-template-rows:  repeat(2,auto) 40px;
+        grid-template-areas:
+        ". forma ."
+        ". simu ."
+        "pe pe pe";
+    }
+
+    section.formArea{
+        grid-area: forma;
+        width: 1fr
+    }
+    section.simulacao{
+        grid-area: simu;
+        width: 1fr;
+    }
+    footer{
+        grid-area: pe;
+    }
 }
