@@ -1,0 +1,92 @@
+@charset "UTF-8";
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+:root{
+    --corPrincipa:#00D700 ;
+    --corSecundaria:#05530c;
+}
+
+body, html{
+    background-color: var(--corPrincipa);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.5em;
+    height: 100%;
+}
+
+header{
+    display: flex;
+    color: white;
+    padding: 10px;
+    background-color: var(--corSecundaria);
+    align-items: center;
+    justify-content: left;
+    
+}
+
+header h1{
+    font-size: 1.5em;
+}
+.fa-money-check-dollar{
+    font-size: 1.5em;
+    padding: 0px 10px;
+}
+
+main{
+    display: flex;
+    flex-flow: column nowrap;
+    min-height: 100vh;
+}
+
+section{
+    text-align: center;
+    background-color: white;
+    padding: 10px;
+    margin: 10px auto;
+    width: 90vw;
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.377);
+    flex: 1;
+    align-content: center;
+}
+section label{
+    font-weight: bold;
+    font-size: 1.3em;
+    margin:10px;
+}
+
+section input{
+    height: 30px;
+    margin-top: 5px;
+    font-size: 1em;
+}
+
+section select{
+    height: 30px;
+    margin-top: 15px;
+    width: 50vw;
+    text-align: center;
+    font-size: 1em;
+}
+
+footer{
+    color: white;
+    text-align: center;
+    padding: 10px;
+    background-color: var(--corSecundaria);
+    font-style: italic;
+}
+
+footer a {
+    color: white;
+    text-decoration: none
+    ;
+}
+
+a:hover{
+    color: var(--corPrincipa);
+}

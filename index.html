@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Taxas</title>
+    <link rel="shortcut icon" href="asset/img/favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="asset/css/style.css">
+    <script src="https://kit.fontawesome.com/940b86eba8.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <header>
+        <i class="fa-solid fa-money-check-dollar"></i>
+        <h1>TAXA TON</h1>
+    </header>
+
+    <main class="container">
+        <section class="formArea">
+            <form>
+                <input type="radio" name="tipo" id="icobrar">
+                <label for="icobrar">COBRAR</label>
+                <input type="radio" name="tipo" id="ireceber" checked>
+                <label for="ireceber">RECEBER</label> <br>
+                <label for="ivalor">Quanto você quer Receber?</label> <br>
+                <input type="number" name="valor" id="ivalor">            
+            </form>
+        </section>
+        
+        <section class="simulacao">
+            <form>
+                <label for="iforma">Forma de pagamento</label> <br>
+                <select name="forma" id="iforma">
+                    <option value="DE">Débito</option>
+                    <option value="CV">Crédito Venc.</option>
+                    <option value="2X">2x</option>
+                    <option value="3X">3x</option>
+                    <option value="4X">4x</option>
+                    <option value="5X">5x</option>
+                    <option value="6X">6x</option>
+                    <option value="7X">7x</option>
+                    <option value="8X">8x</option>
+                    <option value="9X">9x</option>
+                    <option value="10X">10x</option>
+                    <option value="11X">11x</option>
+                    <option value="12X">12x</option>
+                </select> <br>
+                <label for="ibandeira">Bandeira</label> <br>
+                    <select name="bandeira" id="ibandeira">
+                        <option value="VIS">Visa</option>
+                        <option value="MAS">Mastercard</option>
+                        <option value="ELO">Elo</option>
+                        <option value="AME">American Express</option>
+                    </select>
+            </form>
+        </section>
+
+        <footer>
+            <p>&copy; Desenvolvido por <a href="https://github.com/jonathan-cfa" target="_blank" rel="follow">Jonathan C.</a></p>
+        </footer>
+    </main>
+</body>
+</html>
