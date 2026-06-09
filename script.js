@@ -17,82 +17,81 @@ function calcular() {
         msg.innerHTML = '[ERRO]: Adicione um valor'
         msg.style.color = 'orange'
     }
-    //TODOS OS DÉBITOS - START
+    //========================================TODOS OS DÉBITOS - START
+    // Débito Visa e Master - Start
     else if (forma.value === 'DE' && receber && bandeira.value === 'VM') {
-        // vai mostrar o valor receber no débito Visa ou Master
-        const taxa = (1-(1.66 / 100))
-        let resultado = valor / taxa
+        const taxa = (1 - (1.66 / 100)) //calculo da taxa
+        let resultado = valor / taxa //valor com taxa
         msg.innerHTML = `Para receber ${moeda(valor)} <br>`
         msg.style.color = 'green'
         msg.innerHTML += `Cobre ${moeda(resultado)}`
-
     } else if (forma.value === 'DE' && cobrar && bandeira.value === 'VM') {
-        //Mostra o valor a cobrar no débito Visa ou Master
-        const taxa = (1-(1.66 / 100))
+        const taxa = (1 - (1.66 / 100))
         let resultado = valor * taxa
         msg.style.color = 'red'
         msg.innerHTML = `Cobrando ${moeda(valor)} <br>`
         msg.innerHTML += `Você receberá ${moeda(resultado)}`
-        //RECEBER E COBRAR - ELO E AMERICAN EXPRESS
+        // Débito Visa e Master - end
+
+        //Débito Elo e American - Start
     } else if (forma.value === 'DE' && receber && bandeira.value === 'EA') {
-        const taxa = valor * (2.931 / 100)
-        let resultado = taxa + valor //diferença de 0.8 centavos
+        const taxa = (1 - (2.85 / 100))
+        let resultado = valor / taxa
         msg.style.color = 'green'
         msg.innerHTML = `Para receber ${moeda(valor)} <br>`
         msg.innerHTML += `Cobre ${moeda(resultado)}`
-
     } else if (forma.value === 'DE' && cobrar && bandeira.value === 'EA') {
-        const taxa = valor * (2.85 / 100)
-        let resultado = valor - taxa //sem diferença (sd)
+        const taxa = (1 - (2.85 / 100))
+        let resultado = valor * taxa
         msg.style.color = 'red'
         msg.innerHTML = `Cobrando ${moeda(valor)} <br>`
         msg.innerHTML += `Você receberá ${moeda(resultado)}`
-    }
-    //TODOS OS DÉBITOS - END
+    }//Débito Elo e American - end
+    //========================================TODOS OS DÉBITOS - END
 
-    // TODOS OS CRÉDITOS - START
-    //credito visa ou master
+    //========================================TODOS OS CRÉDITOS - START
+    //Crédito Vencimento Visa e Master - Start
     else if (forma.value === 'CV' && receber && bandeira.value === 'VM') {
-        const taxa = valor * (4.112 / 100) //diferença de 0,162 cents para poder ficar igual
-        let resultado = taxa + valor
+        const taxa = (1 - (3.95 / 100))
+        let resultado = valor / taxa
         msg.style.color = 'green'
         msg.innerHTML = `Para receber ${moeda(valor)} <br>`
         msg.innerHTML += `Cobre ${moeda(resultado)}`
     } else if (forma.value === 'CV' && cobrar && bandeira.value === 'VM') {
-        const taxa = valor * (3.95 / 100) //valor igual na ton
-        let resultado = valor - taxa
+        const taxa = (1 - (3.95 / 100))
+        let resultado = valor * taxa
         msg.style.color = 'red'
         msg.innerHTML = `Cobrando ${moeda(valor)} <br>`
         msg.innerHTML += `Você receberá ${moeda(resultado)}`
-    } // Crédito Elo e American express
+    }//Crédito Vencimento Visa e Master - Start
+
+    // Crédito Vencimento Elo e American express - start
     else if (forma.value === 'CV' && receber && bandeira.value === 'EA') {
-        const taxa = valor * (5.417 / 100) //diferença de 0,277 cents
-        let resultado = taxa + valor
+        const taxa = (1 - (5.14 / 100))
+        let resultado = valor / taxa
         msg.style.color = 'green'
         msg.innerHTML = `Para receber ${moeda(valor)} <br>`
         msg.innerHTML += `cobre ${moeda(resultado)}`
-    }
-    else if (forma.value === 'CV' && cobrar && bandeira.value === 'EA') {
-        const taxa = valor * (5.14 / 100)
-        let resultado = valor - taxa
+    } else if (forma.value === 'CV' && cobrar && bandeira.value === 'EA') {
+        const taxa = (1 - 5.14 / 100)
+        let resultado = valor * taxa
         msg.style.color = 'red'
         msg.innerHTML = `Cobrando ${moeda(valor)} <br>`
         msg.innerHTML += `Você receberá ${moeda(resultado)}`
+    } // Crédito Vencimento Elo e American express - end
+    //========================================TODOS OS CRÉDITOS - END
 
-    }
-    // TODOS OS CRÉDITOS - END
-
-    //PARCELAMENTOS -START
+    //========================================PARCELAMENTOS -START
     //Visa e Master em 2x - start
     else if (forma.value === '2X' && receber && bandeira.value === 'VM') {
-        const taxa = valor * (8.681 / 100) //TON diz cobrar 7,99% - diferença de 0,691
-        let resultado = valor + taxa
+        const taxa = (1 - 7.99 / 100)
+        let resultado = valor / taxa
         msg.style.color = 'green'
         msg.innerHTML = `Para receber ${moeda(valor)} <b>`
         msg.innerHTML += `Cobre ${moeda(resultado)}`
     } else if (forma.value === '2X' && cobrar && bandeira.value === 'VM') {
-        const taxa = valor * (7.99 / 100)
-        let resultado = valor - taxa
+        const taxa = (1 - (7.99 / 100))
+        let resultado = valor * taxa
         msg.style.color = 'red'
         msg.innerHTML = `Cobrando ${moeda(valor)} <br>`
         msg.innerHTML += `Você receberá ${moeda(resultado)}`
@@ -100,14 +99,14 @@ function calcular() {
 
     //Elo e American Express em 2x - start
     else if (forma.value === '2X' && receber && bandeira.value === 'EA') {
-        const taxa = valor * (10.350 / 100)
-        let resultado = valor + taxa
+        const taxa = (1 - (9.38 / 100))
+        let resultado = valor / taxa
         msg.style.color = 'green'
         msg.innerHTML = `Para receber ${moeda(valor)} <br>`
         msg.innerHTML += `Cobre ${moeda(resultado)}`
     } else if (forma.value === '2X' && cobrar && bandeira.value === 'EA') {
-        const taxa = valor * (9.38 / 100)
-        let resultado = valor - taxa
+        const taxa = (1 - (9.38 / 100))
+        let resultado = valor * taxa
         msg.style.color = 'red'
         msg.innerHTML = `Cobrando ${moeda(valor)}<br>`
         msg.innerHTML += `Você receberá ${moeda(resultado)}`
@@ -120,10 +119,86 @@ function calcular() {
         msg.style.color = 'green'
         msg.innerHTML = `Para receber ${moeda(valor)}<br>`
         msg.innerHTML += `Cobre ${moeda(resultado)}`
-    }else if ( forma.value === '3X' && cobrar && bandeira.value ==='VM'){
+    } else if (forma.value === '3X' && cobrar && bandeira.value === 'VM') {
         const taxa = (1 - (8.99 / 100))
         let resultado = valor * taxa
         msg.style.color = `red`
+        msg.innerHTML = `Cobrando ${moeda(valor)} <br>`
+        msg.innerHTML += `Você receberá ${moeda(resultado)}`
+    }// visa e master em 3x end
+
+    //Elo e American Express em 3x - start
+    else if (forma.value === '3X' && receber && bandeira.value === 'EA') {
+        const taxa = (1 - (10.38 / 100))
+        let resultado = valor / taxa
+        msg.style.color = 'green'
+        msg.innerHTML = `Para receber ${moeda(valor)} <br`
+        msg.innerHTML += `Cobre ${moeda(resultado)}`
+    } else if (forma.value === '3X' && cobrar && bandeira.value === 'EA') {
+        const taxa = (1 - (10.38 / 100))
+        let resultado = valor * taxa
+        msg.style.color = 'red'
+        msg.innerHTML = `Cobrando ${moeda(valor)}<br>`
+        msg.innerHTML += `Você receberá ${moeda(resultado)}`
+    }//Elo e American Express em 3x - end
+
+    //Visa e Masterem 4x - Start
+    else if (forma.value === '4X' && receber && bandeira.value === 'VM') {
+        const taxa = (1 - (9.99 / 100))
+        let resultado = valor / taxa
+        msg.style.color = 'green'
+        msg.innerHTML = `Para receber ${moeda(valor)} <br>`
+        msg.innerHTML += `Cobre ${moeda(resultado)}`
+    } else if (forma.value === '4X' && cobrar && bandeira.value === 'VM') {
+        const taxa = (1 - (9.99 / 100))
+        let resultado = valor * taxa
+        msg.style.color = 'red'
+        msg.innerHTML = `Cobrando ${moeda(valor)} <br>`
+        msg.innerHTML += `Você receberá ${moeda(resultado)}`
+    }//Visa e Masterem 4x - end
+
+
+    //Elo e American em 4x - Start
+    else if (forma.value === '4X' && receber && bandeira.value === 'EA') {
+        const taxa = (1 - (11.38 / 100))
+        let resultado = valor / taxa
+        msg.style.color = 'green'
+        msg.innerHTML = `Para receber ${moeda(valor)} <br>`
+        msg.innerHTML += `Cobre ${moeda(resultado)}`
+    } else if (forma.value === '4X' && cobrar && bandeira.value === 'EA') {
+        const taxa = (1 - (11.38 / 100))
+        let resultado = valor * taxa
+        msg.style.color = 'red'
+        msg.innerHTML = `Cobrando ${moeda(valor)} <br>`
+        msg.innerHTML += `Você receberá ${moeda(resultado)}`
+    }//Elo e American em 4x - End
+
+    //Visa e Master em 5x - start
+    else if (forma.value === '5X' && receber && bandeira.value === 'VM') {
+        const taxa = (1 - (10.99 / 100))
+        let resultado = valor / taxa
+        msg.style.color = 'green'
+        msg.innerHTML = `Para receber ${moeda(valor)} <br>`
+        msg.innerHTML += `Cobre ${moeda(resultado)}`
+    } else if (forma.value === '5X' && cobrar && bandeira.value === 'VM') {
+        const taxa = (1 - (10.99 / 100))
+        let resultado = valor * taxa
+        msg.style.color = 'red'
+        msg.innerHTML = `Cobrando ${moeda(valor)} <br>`
+        msg.innerHTML += `Você receberá ${moeda(resultado)}`
+    }//Visa e Master em 5x - end
+
+    //Elo e American em 5x - start
+    else if(forma.value === '5X' && receber && bandeira.value === 'EA'){
+        const taxa = (1-(12.38 / 100))
+        let resultado = valor / taxa
+        msg.style.color = 'green'
+        msg.innerHTML = `Para receber ${moeda(valor)} <br>`
+        msg.innerHTML += `Cobre ${moeda(resultado)}`
+    }else if (forma.value === '5X'&& cobrar && bandeira.value === 'EA') {
+        const taxa = (1-(12.38 / 100))
+        let resultado = valor * taxa
+        msg.style.color = 'red'
         msg.innerHTML = `Cobrando ${moeda(valor)} <br>`
         msg.innerHTML += `Você receberá ${moeda(resultado)}`
     }
@@ -131,7 +206,7 @@ function calcular() {
 }
 
 //função auxiliar
-function moeda(valor) {
+function moeda(valor) {// função para formatar os números da formula principal
     return valor.toLocaleString('pt-BR', {
         style: 'currency',
         currency: 'BRL'
