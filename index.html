@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link rel="stylesheet" href="asset/css/style.css">
     <script src="https://kit.fontawesome.com/940b86eba8.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
 
     <header>
@@ -23,12 +25,12 @@
                 <input type="radio" name="tipo" id="ireceber" checked>
                 <label for="ireceber">RECEBER</label> <br>
                 <label for="ivalor">Quanto você quer Receber?</label> <br>
-                <input type="number" name="valor" id="ivalor" autocomplete="off"> <br>  
-                <input type="button" value="CALCULAR" onclick="calcular()">      
+                <input type="number" name="valor" id="ivalor" autocomplete="off"> <br>
+                <input type="button" value="CALCULAR" id="btncalc">
             </form>
             <p id="res">preencha os campos para calcular</p>
         </section>
-        
+
         <section class="simulacao">
             <form>
                 <label for="iforma">Forma de pagamento</label> <br>
@@ -48,18 +50,20 @@
                     <option value="12X">12x</option>
                 </select> <br>
                 <label for="ibandeira">Bandeira</label> <br>
-                    <select name="bandeira" id="ibandeira">
-                        <option value="VM">Visa ou Master</option>
-                        <option value="EA">Elo ou American Express</option>
-                    </select>
+                <select name="bandeira" id="ibandeira">
+                    <option value="VM">Visa ou Master</option>
+                    <option value="EA">Elo ou American Express</option>
+                </select>
             </form>
         </section>
 
         <footer>
-            <p>&copy; Desenvolvido por <a href="https://github.com/jonathan-cfa" target="_blank" rel="follow">Jonathan C.</a></p>
+            <p>&copy; Desenvolvido por <a href="https://github.com/jonathan-cfa" target="_blank" rel="follow">Jonathan
+                    C.</a></p>
         </footer>
     </main>
 
     <script src="script.js"></script>
 </body>
+
 </html>
