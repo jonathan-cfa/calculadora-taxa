@@ -87,7 +87,7 @@ function calcular() {
         const taxa = (1 - 7.99 / 100)
         let resultado = valor / taxa
         msg.style.color = 'green'
-        msg.innerHTML = `Para receber ${moeda(valor)} <b>`
+        msg.innerHTML = `Para receber ${moeda(valor)} <br>`
         msg.innerHTML += `Cobre ${moeda(resultado)}`
     } else if (forma.value === '2X' && cobrar && bandeira.value === 'VM') {
         const taxa = (1 - (7.99 / 100))
@@ -132,7 +132,7 @@ function calcular() {
         const taxa = (1 - (10.38 / 100))
         let resultado = valor / taxa
         msg.style.color = 'green'
-        msg.innerHTML = `Para receber ${moeda(valor)} <br`
+        msg.innerHTML = `Para receber ${moeda(valor)} <br>`
         msg.innerHTML += `Cobre ${moeda(resultado)}`
     } else if (forma.value === '3X' && cobrar && bandeira.value === 'EA') {
         const taxa = (1 - (10.38 / 100))
@@ -210,7 +210,7 @@ function calcular() {
         msg.style.color = 'green'
         msg.innerHTML = `Para receber ${moeda(valor)} <br>`
         msg.innerHTML += `Cobre ${moeda(resultado)}`
-    } else if (forma.value === '6X' && cobrar & bandeira.value === 'VM') {
+    } else if (forma.value === '6X' && cobrar && bandeira.value === 'VM') {
         const taxa = (1 - (11.99 / 100))
         let resultado = valor * taxa
         msg.style.color = 'red'
@@ -249,7 +249,7 @@ function calcular() {
     }// Visa e Master em 7x - End
 
     //Elo e American em 7x - Start 
-    else if (forma.value === '7X' && receber & bandeira.value === 'EA') {
+    else if (forma.value === '7X' && receber && bandeira.value === 'EA') {
         const taxa = (1 - (14.38 / 100))
         let resultado = valor / taxa
         msg.style.color = 'green'
@@ -270,7 +270,7 @@ function calcular() {
         msg.style.color = 'green'
         msg.innerHTML = `Para receber ${moeda(valor)} <br>`
         msg.innerHTML += `Cobre ${moeda(resultado)}`
-    } else if (forma.value === '8X' && cobrar & bandeira.value === 'VM') {
+    } else if (forma.value === '8X' && cobrar && bandeira.value === 'VM') {
         const taxa = (1 - (13.99 / 100))
         let resultado = valor * taxa
         msg.style.color = 'red'
@@ -285,7 +285,7 @@ function calcular() {
         msg.style.color = 'green'
         msg.innerHTML = `Para receber ${moeda(valor)} <br>`
         msg.innerHTML += `Cobre ${moeda(resultado)}`
-    } else if (forma.value === '8X' && cobrar & bandeira.value === 'EA') {
+    } else if (forma.value === '8X' && cobrar && bandeira.value === 'EA') {
         const taxa = (1 - (15.38 / 100))
         let resultado = valor * taxa
         msg.style.color = 'red'
@@ -313,9 +313,9 @@ function calcular() {
         const taxa = (1 - (16.38 / 100))
         let resultado = valor / taxa
         msg.style.color = 'green'
-        msg.innerHTMl = `Para receber ${moeda(valor)} <br>`
+        msg.innerHTML = `Para receber ${moeda(valor)} <br>`
         msg.innerHTML += `Cobre ${moeda(resultado)}`
-    } else if (forma.value === '9X' && cobrar & bandeira.value === 'EA') {
+    } else if (forma.value === '9X' && cobrar && bandeira.value === 'EA') {
         const taxa = (1 - (16.38 / 100))
         let resultado = valor * taxa
         msg.style.color = 'red'
@@ -324,7 +324,7 @@ function calcular() {
     }//Elo e American em 9x - End
 
     //Visa e Master em 10x - Start
-    else if (forma.value === '10X' && receber & bandeira.value === 'VM') {
+    else if (forma.value === '10X' && receber && bandeira.value === 'VM') {
         const taxa = (1 - (14.99 / 100))
         let resultado = valor / taxa
         msg.style.color = 'green'
