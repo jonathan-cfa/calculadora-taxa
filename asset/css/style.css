@@ -97,24 +97,22 @@ a:hover{
 
 @media screen and (min-width:720px){
     main{
-        display: grid;
-        grid-template-columns: 10px 1fr 10px;
-        grid-template-rows:  repeat(2,auto) 40px;
-        grid-template-areas:
-        ". forma ."
-        ". simu ."
-        "pe pe pe";
+        display: flex;
+        flex-flow: column nowrap;
     }
 
-    section.formArea{
-        grid-area: forma;
-        width: 1fr
+
+    section{
+        width: 500px;
+        height: 400px;
     }
-    section.simulacao{
-        grid-area: simu;
-        width: 1fr;
+
+    select#iforma{
+        width: 200px;
     }
-    footer{
-        grid-area: pe;
+
+    select#ibandeira{
+        width: 200px;
     }
 }
+
