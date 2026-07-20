@@ -33,11 +33,12 @@ function calcular() {
     const valor = Number(campo.valorInput.value);
 
     campo.msg.innerHTML = '';
+    if(!verificacoes()) return;
 
     const porcentagem = taxas[forma]?.[bandeira];
 
     if(porcentagem === undefined){
-        campo.msg.syle.color = 'orange';
+        campo.msg.style.color = 'orange';
         campo.msg.innerHTML = '[ERRO]: Combinação de forma/bandeira inválida!!';
         return
     }
@@ -47,7 +48,7 @@ function calcular() {
     if(receber){
         const resultado = valor / taxa;
         campo.msg.style.color = 'green';
-        campo.msg.innerHTML = `Para recebeber ${moeda(valor)} <br> Cobre ${moeda(resultado)}`;
+        campo.msg.innerHTML = `Para receber ${moeda(valor)} <br> Cobre ${moeda(resultado)}`;
     }else {
         const resultado = valor * taxa;
         campo.msg.style.color = 'red';
