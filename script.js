@@ -63,8 +63,9 @@ function verificacoes() {
     if (campo.valorInput.value.length === 0 || isNaN(campo.valorInput.value)) {
         campo.msg.style.color = 'orange';
         campo.msg.innerHTML = '[ERRO]: Adicione um valor';
-        return;
+        return false; 
     }
+    return true
 };
 
 function moeda(valor){
