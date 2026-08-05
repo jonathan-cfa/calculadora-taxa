@@ -65,7 +65,7 @@ function verificacoes() {
         campo.msg.innerHTML = '[ERRO]: Adicione um valor';
         return false; 
     }
-    return true
+    return true;
 };
 
 function moeda(valor){
